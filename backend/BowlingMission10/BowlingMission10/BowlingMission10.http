@@ -1,0 +1,6 @@
+@BowlingMission10_HostAddress = http://localhost:5296
+
+GET {{BowlingMission10_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

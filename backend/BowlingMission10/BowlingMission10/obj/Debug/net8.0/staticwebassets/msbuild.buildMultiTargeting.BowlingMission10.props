@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/BowlingMission10.props" />
+</Project>
