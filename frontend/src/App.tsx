@@ -1,11 +1,12 @@
 import './App.css'
 import BowlerList from './BowlersList'
+import Head from './Header'
 
 function App() {
 
   return (
     <>
-      <p>Test</p>
+      <Head />
       <BowlerList />
     </>
   )

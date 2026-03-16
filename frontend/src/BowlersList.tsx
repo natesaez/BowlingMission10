@@ -6,7 +6,7 @@ function BowlerList () {
 const [bowlers, setBowlers] = useState<bowler[]>([]);
 
 const fetchBowler = async () => {
-    const response = await fetch("http://localhost:5296/api/Bowlers");
+    const response = await fetch("http://localhost:6000/api/Bowlers");
     const data = await response.json();
     setBowlers(data);
 }
