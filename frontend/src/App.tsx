@@ -1,13 +1,12 @@
-// import { useState } from 'react'
-
 import './App.css'
+import BowlerList from './BowlersList'
 
 function App() {
-  // const [count, setCount] = useState(0)
 
   return (
     <>
       <p>Test</p>
+      <BowlerList />
     </>
   )
 }
