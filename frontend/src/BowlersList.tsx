@@ -43,7 +43,7 @@ fetchBowler();
                                 <td>{f.bowlerFirstName}</td>
                                 <td>{f.bowlerMiddleInit}</td>
                                 <td>{f.bowlerLastName}</td>
-                                <td>{f.teamId}</td>
+                                <td>{f.teamName}</td>
                                 <td>{f.bowlerAddress}</td>
                                 <td>{f.bowlerCity}</td>
                                 <td>{f.bowlerState}</td>
