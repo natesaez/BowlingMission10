@@ -1,8 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
-
-using BowlingMission10.data;
 using BowlingMission10.data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace BowlingMission10.Controllers;
 
@@ -18,9 +16,27 @@ public class BowlersController : ControllerBase
     }
 
     [HttpGet(Name = "GetBowlers")]
-    public IEnumerable<Bowler> Get()
+    public IActionResult Get()
     {
-        var bowlerList = _bowlerContext.Bowlers.ToList();
-        return bowlerList;
+        var bowlerList = _bowlerContext.Bowlers
+            .Include(b => b.Team)
+            .Where(b => b.Team != null &&
+                        (b.Team.TeamName == "Marlins" || b.Team.TeamName == "Sharks"))
+            .Select(b => new
+            {
+                b.BowlerId,
+                b.BowlerFirstName,
+                b.BowlerMiddleInit,
+                b.BowlerLastName,
+                TeamName = b.Team!.TeamName,
+                b.BowlerAddress,
+                b.BowlerCity,
+                b.BowlerState,
+                b.BowlerZip,
+                b.BowlerPhoneNumber
+            })
+            .ToList();
+
+        return Ok(bowlerList);
     }
 }

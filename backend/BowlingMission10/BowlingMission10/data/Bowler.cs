@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace BowlingMission10.data;
 
@@ -12,7 +13,7 @@ public class Bowler
     [Required]
     public string BowlerLastName { get; set; }
     [Required]
-    public string TeamID { get; set; }
+    public int TeamID { get; set; }
     [Required]
     public string BowlerAddress { get; set; }
     [Required]
@@ -23,6 +24,8 @@ public class Bowler
     public int BowlerZip { get; set; }
     [Required]
     public string BowlerPhoneNumber { get; set; }
+    [ForeignKey("TeamId")]
+    public Team? Team { get; set; }
     
 
 }
